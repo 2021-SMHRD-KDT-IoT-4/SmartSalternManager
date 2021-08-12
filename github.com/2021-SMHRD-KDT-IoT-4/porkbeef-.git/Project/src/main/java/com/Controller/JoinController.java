@@ -18,7 +18,7 @@ public class JoinController implements Command {
 		String id = request.getParameter("id");
 		String pw = request.getParameter("pw");
 		
-
+		
 		MembersDAO dao = new MembersDAO();
 		MembersDTO dto = new MembersDTO(id, pw);
 

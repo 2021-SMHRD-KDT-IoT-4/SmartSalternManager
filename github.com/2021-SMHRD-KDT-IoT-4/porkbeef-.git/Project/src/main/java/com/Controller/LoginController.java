@@ -30,12 +30,9 @@ public class LoginController implements Command {
 			HttpSession session = request.getSession();
 			session.setAttribute("info", info);
 			
-			
-			
-			
 		}
 		
-		
+		response.sendRedirect(".jsp");
 	}
 
 }

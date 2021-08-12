@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
+<% %>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -14,7 +15,7 @@
 			<!-- Header -->
 				<div id="header">
 					<!-- Logo -->
-						<h1><a href="index.html" id="logo">스마트 염전 관리</a></h1>
+						<h1><a href="index.jsp" id="logo">스마트 염전 관리</a></h1>
 					<!-- Nav -->
 						<nav id="nav">
 							<ul>
