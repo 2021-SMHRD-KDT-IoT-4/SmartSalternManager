@@ -10,8 +10,7 @@ public class LoginController implements Command {
 
 	@Override
 	public void command(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-
+		
 	}
 
 }
