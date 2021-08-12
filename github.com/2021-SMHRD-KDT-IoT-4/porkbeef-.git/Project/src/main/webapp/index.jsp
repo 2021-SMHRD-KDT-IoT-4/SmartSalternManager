@@ -1,12 +1,9 @@
-<!DOCTYPE HTML>
-<!--
-	Arcana by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<!DOCTYPE html>
 <html>
 	<head>
-		<title>Arcana by HTML5 UP</title>
+		<title>½º¸¶Æ® ¿°Àü°ü¸®</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -16,21 +13,18 @@
 
 			<!-- Header -->
 				<div id="header">
-
 					<!-- Logo -->
-						<h1><a href="index.html" id="logo">ìŠ¤ë§ˆíŠ¸ ì—¼ì „ ê´€ë¦¬</a></h1>
-
+						<h1><a href="index.html" id="logo">½º¸¶Æ® ¿°Àü °ü¸®</a></h1>
 					<!-- Nav -->
 						<nav id="nav">
 							<ul>
-								<li><a href="index.html">Home</a></li>
+								<li><a href="index.jsp">Home</a></li>
 								<li><a href="no-sidebar.html">CCTV</a></li>
-								<li><a href="no-sidebar.html">ì—¼ì „ì œì–´</a></li>
-								<li><a href="no-sidebar.html">ìƒì‚°ì •ë³´</a></li>
-								<li><a href="no-sidebar.html">ì„¼ì„œëª¨ë‹ˆí„°ë§</a></li>
+								<li><a href="no-sidebar.html">¿°ÀüÁ¦¾î</a></li>
+								<li><a href="no-sidebar.html">»ý»êÁ¤º¸</a></li>
+								<li><a href="no-sidebar.html">¼¾¼­¸ð´ÏÅÍ¸µ</a></li>
 							</ul>
 						</nav>
-
 				</div>
 
 		
