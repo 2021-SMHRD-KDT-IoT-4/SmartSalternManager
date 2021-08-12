@@ -79,18 +79,20 @@ public class ControlDAO {
 				return rtn;
 	}
 	
-	public ArrayList<ControlDTO> select() {
+	public ControlDTO select(ControlDTO dto) {
 		
-		list = new ArrayList<ControlDTO>();
+		
 		conn();
 		
-			String sql = "select * from CONTROL";
+			String sql = "select * from CONTROL WHERE numbering= ?";
 			
 			try {
 				psmt = conn.prepareStatement(sql);
+				
+				psmt.setInt(1,dto.getNumbering());
 				rs = psmt.executeQuery();
 				
-				while(rs.next()) {
+				if(rs.next()) {
 					int numbering  = rs.getInt(1);
 					String fan = rs.getString(2); 
 					String pump = rs.getString(3); 
@@ -100,9 +102,7 @@ public class ControlDAO {
 					String light = rs.getString(7);
 					String camera = rs.getString(8);
 					
-					dto =  new ControlDTO(numbering, fan, pump, wire, pusher, conveyer,light,camera);
-					list.add(dto);
-					
+					this.dto =  new ControlDTO(numbering, fan, pump, wire, pusher, conveyer,light,camera);									
 				}
 			} catch (SQLException e) {
 				e.printStackTrace();
@@ -110,9 +110,8 @@ public class ControlDAO {
 				close();
 			}
 			
-			return list;
+			return this.dto;
 	}
-	
 	
 	
 	

@@ -30,6 +30,20 @@ public class ControlDTO {
 		this.camera = camera;
 	}
 
+	
+	
+	
+	
+
+	public ControlDTO(int numbering) {
+		super();
+		this.numbering = numbering;
+	}
+
+
+
+
+
 
 
 	public int getNumbering() {
