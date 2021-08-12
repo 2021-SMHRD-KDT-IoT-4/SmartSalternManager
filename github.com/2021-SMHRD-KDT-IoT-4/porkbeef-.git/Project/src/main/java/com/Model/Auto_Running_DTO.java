@@ -9,13 +9,18 @@ public class Auto_Running_DTO {
 	private int light_run;
 	
 	public Auto_Running_DTO(int numbering, int fan_run, int pump_run, int wire_run, int light_run) {
-		super();
 		this.numbering = numbering;
 		this.fan_run = fan_run;
 		this.pump_run = pump_run;
 		this.wire_run = wire_run;
 		this.light_run = light_run;
 	}
+	
+	public Auto_Running_DTO(int numbering) {
+		this.numbering = numbering;
+	
+	}
+	
 
 	public int getNumbering() {
 		return numbering;

@@ -5,11 +5,14 @@ public class OutPut_DTO {
 	private String date_search;
 	private int prod;
 	public OutPut_DTO(int numbering, String date_search, int prod) {
-		super();
 		this.numbering = numbering;
 		this.date_search = date_search;
 		this.prod = prod;
 	}
+	public OutPut_DTO(int numbering) {
+		this.numbering = numbering;
+	}
+	
 	public int getNumbering() {
 		return numbering;
 	}
