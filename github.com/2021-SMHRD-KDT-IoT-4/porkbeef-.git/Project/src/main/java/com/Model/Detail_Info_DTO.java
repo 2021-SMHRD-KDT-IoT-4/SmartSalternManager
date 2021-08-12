@@ -76,10 +76,12 @@ public class Detail_Info_DTO {
 		this.automode = automode;
 	}
 	
+	public Detail_Info_DTO(int numbering) {
+		this.numbering = numbering;
+	}
 	
 	public Detail_Info_DTO(int numbering, int salinity, int indoor_temp, int water_temp, int wire_temp, int water_high,
 			int daily_prod, String harvest, int place_size, String automode) {
-		super();
 		this.numbering = numbering;
 		this.salinity = salinity;
 		this.indoor_temp = indoor_temp;
@@ -91,6 +93,11 @@ public class Detail_Info_DTO {
 		this.place_size = place_size;
 		this.automode = automode;
 	}
+	
+	
+	
+	
+	
 	
 	
 	

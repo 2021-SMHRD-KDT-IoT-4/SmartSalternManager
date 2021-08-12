@@ -13,6 +13,7 @@ public class Detail_Info_DAO {
 	ResultSet rs = null;
 	int rtn = 0;
 	String name = null;
+	Detail_Info_DTO dto=null;
 	
 	public void conn() {
 		try {
@@ -58,7 +59,7 @@ public class Detail_Info_DAO {
 			psmt.setInt(1, dto.getNumbering());
 			rs = psmt.executeQuery();
 
-			while (rs.next()) {
+			if (rs.next()) {
 				int numbering = rs.getInt(1);
 				int salinity = rs.getInt(2);
 				int indoor_temp = rs.getInt(3);
@@ -70,9 +71,7 @@ public class Detail_Info_DAO {
 				int place_size = rs.getInt(9);
 				String automode = rs.getString(10);
 				
-				
-				
-				dto= new Detail_Info_DTO(numbering, salinity,indoor_temp,water_temp,
+				this.dto = new Detail_Info_DTO(numbering, salinity,indoor_temp,water_temp,
 						wire_temp,water_high,daily_prod,harvest,place_size,automode);
 			}
 
@@ -83,7 +82,7 @@ public class Detail_Info_DAO {
 			close();
 		}
 
-		return dto;
+		return this.dto;
 	}
 		
 		public int Update_Detail_Info(Detail_Info_DTO dto) {
