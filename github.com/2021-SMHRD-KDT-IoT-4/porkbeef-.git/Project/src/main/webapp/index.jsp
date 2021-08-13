@@ -1,6 +1,12 @@
+<%@page import="com.Model.MembersDTO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
-<% %>
+<%
+	    MembersDTO user = (MembersDTO)session.getAttribute("info");	
+		if(user == null){
+			response.sendRedirect("Login.jsp");
+		}
+%>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -28,11 +34,10 @@
 						</nav>
 				</div>
 
-		
-
 			<!-- Highlights -->
 				<section class="wrapper style1">
-					<div class="container">
+					<div class="container" >
+					
 						<div class="row gtr-200">
 							<section class="col-4 col-12-narrower">
 								<div class="box highlight">
@@ -58,8 +63,8 @@
 						</div>
 					</div>
 				</section>
-
-		
+				
+		</div>
 
 
 		<!-- Scripts -->
