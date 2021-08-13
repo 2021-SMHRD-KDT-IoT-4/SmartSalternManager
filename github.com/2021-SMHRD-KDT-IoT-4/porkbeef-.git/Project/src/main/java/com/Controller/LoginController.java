@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.Model.Detail_Info_DAO;
+import com.Model.Detail_Info_DTO;
 import com.Model.MembersDAO;
 import com.Model.MembersDTO;
 
@@ -19,10 +21,13 @@ public class LoginController implements Command {
 		
 		String id = request.getParameter("id");
 		String pw = request.getParameter("pw");
-		
+
+		System.out.println("왔니1");
 		MembersDTO dto = new MembersDTO(id, pw);
 		MembersDAO dao = new MembersDAO();
 		MembersDTO info = dao.login(dto);
+		
+		
 		
 		if(info != null) {
 			System.out.println("로그인 성공");
@@ -30,9 +35,17 @@ public class LoginController implements Command {
 			HttpSession session = request.getSession();
 			session.setAttribute("info", info);
 			
+			Detail_Info_DTO didto = new Detail_Info_DTO(info.getIdseq());
+			Detail_Info_DAO didao = new Detail_Info_DAO();
+			Detail_Info_DTO diinfo = didao.Get_Detail_Info(didto);
+			
+			session.setAttribute("diinfo", diinfo);
+			
+			
+			
 		}
 		
-		response.sendRedirect(".jsp");
+		response.sendRedirect("index.jsp");
 	}
 
 }

@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.Controller.Command;
+import com.Controller.JoinController;
 import com.Controller.LoginController;
 
 /**
@@ -27,8 +28,10 @@ public class FrontController extends HttpServlet {
 
 		Command _interface = null;
 		
-		if (result_URI.equals("Login.do")) {
+		if (result_URI.equals("login.do")) {
 			_interface = new LoginController();
+		} if (result_URI.equals("Join.do")) {
+			_interface = new JoinController();
 		} 
 		
 		_interface.command(request, response);

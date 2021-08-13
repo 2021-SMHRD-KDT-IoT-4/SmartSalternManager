@@ -54,10 +54,12 @@ public class MembersDAO {
 
 		conn();
 
-		String sql = "insert into web_member values('idSeq.nextval',?,?)";
+		String sql = "insert into members values(idSeq.nextval,?,?)";
 		try {
 			psmt = conn.prepareStatement(sql);
-
+			
+			System.out.println(dto.getId() + "   " + dto.getPw() );
+			System.out.println(sql);
 			psmt.setString(1, dto.getId());
 			psmt.setString(2, dto.getPw());
 
@@ -73,11 +75,14 @@ public class MembersDAO {
 	}
 
 	public MembersDTO login(MembersDTO dto) {
+		
 		conn();
 
-		String sql = "select * from web_member where id=? and pw=?";
+		String sql = "select * from MEMBERS where member_id=? and member_pw=?";
 
 		try {
+
+			System.out.println("¿Ô´Ï2");
 			psmt = conn.prepareStatement(sql);
 
 			psmt.setString(1, dto.getId());
