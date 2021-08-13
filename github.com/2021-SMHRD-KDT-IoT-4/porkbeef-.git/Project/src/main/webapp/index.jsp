@@ -7,7 +7,7 @@
 		if(user == null){
 			response.sendRedirect("Login.jsp");
 		}
-			Detail_Info_DTO dto = (Detail_Info_DTO)session.getAttribute("di_DTO");
+			Detail_Info_DTO dto = (Detail_Info_DTO)session.getAttribute("diinfo");
 		
 %>
 <!DOCTYPE html>

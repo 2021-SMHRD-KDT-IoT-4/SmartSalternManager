@@ -53,26 +53,28 @@ public class Detail_Info_DAO {
 		conn();
 
 		try {
-			String sql = "select * from Detail_Info where = ?"; // where 조건 필요시 추가하기
-
+			String sql = "select * from DETAIL_INFO where numbering = ?"; // where 조건 필요시 추가하기
 			psmt = conn.prepareStatement(sql);
 			psmt.setInt(1, dto.getNumbering());
 			rs = psmt.executeQuery();
-
+		
 			if (rs.next()) {
-				int numbering = rs.getInt(1);
-				int salinity = rs.getInt(2);
-				int indoor_temp = rs.getInt(3);
-				int water_temp = rs.getInt(4);
-				int wire_temp = rs.getInt(5);
-				int water_high = rs.getInt(6);
-				int daily_prod = rs.getInt(7);
-				String harvest = rs.getString(8);
-				int place_size = rs.getInt(9);
-				String automode = rs.getString(10);
+				System.out.println(rs.getInt("numbering") + "sdfdsdfsdf");
+				
+				int numbering = rs.getInt("numbering");
+				int salinity = rs.getInt("salinity");
+				int indoor_temp = rs.getInt("indoor_temp");
+				int water_temp = rs.getInt("water_temp");
+				int wire_temp = rs.getInt("wire_temp");
+				int water_high = rs.getInt("water_high");
+				int daily_prod = rs.getInt("daily_prod");
+				String harvest = rs.getString("harvest");
+				int place_size = rs.getInt("place_size");
+				String automode = rs.getString("automode");
 				
 				this.dto = new Detail_Info_DTO(numbering, salinity,indoor_temp,water_temp,
 						wire_temp,water_high,daily_prod,harvest,place_size,automode);
+				System.out.println(dto.toString());
 			}
 
 		} catch (SQLException e) {
@@ -81,7 +83,7 @@ public class Detail_Info_DAO {
 		} finally {
 			close();
 		}
-
+		
 		return this.dto;
 	}
 		
@@ -90,7 +92,7 @@ public class Detail_Info_DAO {
 			conn();
 
 			String sql = "update detail_info set numbering=?, salinity=?, indoor_temp=?, water_temp =?,"
-					+ "wire_temp =?,water_high =?,daily_prod =?,harvest =?,place_size =?,automode =? where = ?";
+					+ "wire_temp =?,water_high =?,daily_prod =?,harvest =?,place_size =?,automode =? where numbering = ?";
 
 			try {
 				psmt = conn.prepareStatement(sql);
