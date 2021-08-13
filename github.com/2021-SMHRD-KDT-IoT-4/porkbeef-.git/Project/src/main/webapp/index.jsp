@@ -1,3 +1,4 @@
+<%@page import="com.Model.Detail_Info_DTO"%>
 <%@page import="com.Model.MembersDTO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
@@ -6,6 +7,8 @@
 		if(user == null){
 			response.sendRedirect("Login.jsp");
 		}
+			Detail_Info_DTO dto = (Detail_Info_DTO)session.getAttribute("di_DTO");
+		
 %>
 <!DOCTYPE html>
 <html>
@@ -35,32 +38,96 @@
 				</div>
 
 			<!-- Highlights -->
-				<section class="wrapper style1">
+				<section class="wrapper style13">
 					<div class="container" >
-					
-						<div class="row gtr-200">
-							<section class="col-4 col-12-narrower">
-								<div class="box highlight">
-									<i class="icon solid major fa-paper-plane"></i>
-									<h3>This Is Important</h3>
-									<p>Duis neque nisi, dapibus sed mattis et quis, nibh. Sed et dapibus nisl amet mattis, sed a rutrum accumsan sed. Suspendisse eu.</p>
-								</div>
-							</section>
-							<section class="col-4 col-12-narrower">
-								<div class="box highlight">
-									<i class="icon solid major fa-pencil-alt"></i>
-									<h3>Also Important</h3>
-									<p>Duis neque nisi, dapibus sed mattis et quis, nibh. Sed et dapibus nisl amet mattis, sed a rutrum accumsan sed. Suspendisse eu.</p>
-								</div>
-							</section>
-							<section class="col-4 col-12-narrower">
-								<div class="box highlight">
-									<i class="icon solid major fa-wrench"></i>
-									<h3>Probably Important</h3>
-									<p>Duis neque nisi, dapibus sed mattis et quis, nibh. Sed et dapibus nisl amet mattis, sed a rutrum accumsan sed. Suspendisse eu.</p>
-								</div>
-							</section>
-						</div>
+							<table style="color:white;  margin-left: 50px; margin-bottom: 0px; padding-left: 0px; margin-right: 50px; margin-top: 60px;">
+								<tr>
+									<td>
+										<section style="height: 100px; width: 220px;">
+											<a href="#"> 
+												<img src="images/pic01.jpg" class="img">
+											</a>
+											<div style="margin-left: 15px; margin-top: 0px; padding-bottom: 10px; padding-top: 10px; padding-left: 0px; padding-right: 0px; margin-right: 15px;">
+													염도 : <%=dto.getSalinity() %> %
+											</div>
+										</section>
+									</td>									
+									<td>
+										<section style="height: 100px; width: 220px;">
+											<a href="#"> 
+												<img src="images/pic01.jpg" class="img">
+											</a>
+											<div style="margin-left: 15px; margin-top: 0px; padding-bottom: 10px; padding-top: 10px; padding-left: 0px; padding-right: 0px; margin-right: 15px;">
+													실내 온습도 : <%=dto.getIndoor_temp() %>
+											</div>
+										</section>
+									</td>
+									<td>
+										<section style="height: 100px; width: 220px;">
+											<a href="#"> 
+												<img src="images/pic01.jpg" class="img">
+											</a>
+											<div style="margin-left: 15px; margin-top: 0px; padding-bottom: 10px; padding-top: 10px; padding-left: 0px; padding-right: 0px; margin-right: 15px;">
+												염수 온도 : <%=dto.getWater_temp()%>
+											</div>
+										</section>
+									</td>
+									<td>
+										<section style="height: 100px; width: 220px;">
+											<a href="#"> 
+												<img src="images/pic01.jpg" class="img">
+											</a>
+											<div style="margin-left: 15px; margin-top: 0px; padding-bottom: 10px; padding-top: 10px; padding-left: 0px; padding-right: 0px; margin-right: 15px;">
+												열선 온도 : <%=dto.getWire_temp() %>
+											</div>
+										</section>
+									</td>
+									
+								</tr>
+								<tr>
+									<td style="padding-top: 130px;">
+										<section style="height: 100px; width: 220px;">
+											<a href="#"> 
+												<img src="images/pic01.jpg" class="img">
+											</a>
+											<div style="margin-left: 15px; margin-top: 0px; padding-bottom: 10px; padding-top: 10px; padding-left: 0px; padding-right: 0px; margin-right: 15px;">
+												수위 정보 : <%=dto.getWater_high() %>
+											</div>
+										</section>
+									</td>									
+									<td style="padding-top: 130px;">
+										<section style="height: 100px; width: 220px;">
+											<a href="#"> 
+												<img src="images/pic01.jpg" class="img">
+											</a>
+											<div style="margin-left: 15px; margin-top: 0px; padding-bottom: 10px; padding-top: 10px; padding-left: 0px; padding-right: 0px; margin-right: 15px;">
+												일일 생산량 : <%=dto.getDaily_prod() %>
+											</div>
+										</section>
+									</td>
+									<td style="padding-top: 130px;">
+										<section style="height: 100px; width: 220px;">
+											<a href="#"> 
+												<img src="images/pic01.jpg" class="img">
+											</a>
+											<div style="margin-left: 15px; margin-top: 0px; padding-bottom: 10px; padding-top: 10px; padding-left: 0px; padding-right: 0px; margin-right: 15px;">
+												수확가능 시기 : <%=dto.getHarvest() %>
+											</div>
+										</section>
+									</td>
+									<td style="padding-top: 130px;">
+										<section style="height: 100px; width: 220px;">
+											<a href="#"> 
+												<img src="images/pic01.jpg" class="img">
+											</a>
+											<div style="margin-left: 15px; margin-top: 0px; padding-bottom: 10px; padding-top: 10px; padding-left: 0px; padding-right: 0px; margin-right: 15px;">
+												염전 크기 : <%=dto.getPlace_size() %>
+											</div>
+										</section>
+									</td>
+									
+								</tr>
+							</table>
 					</div>
 				</section>
 				

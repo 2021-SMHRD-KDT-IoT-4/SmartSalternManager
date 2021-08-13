@@ -2723,9 +2723,17 @@ input, select, textarea {
 		padding: 5em 0 3em 0;
 	}
 
+		.wrapper.style13 {
+			height:663px !important;
+			background-image: url("images/backImg.jpeg") !important;
+			background-repeat:no-repeat;
+			background-position: center;
+			background-size: cover;
+			background-attachment: fixed;
+		}
 		.wrapper.style1 {
 			background: #fff;
-			height:350px;
+			height:438px;
 		}
 
 		.wrapper.style2 {
