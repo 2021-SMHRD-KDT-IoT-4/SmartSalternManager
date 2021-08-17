@@ -11,7 +11,7 @@
 		
 %>
 <!DOCTYPE html>
-<html>
+<html> 
 	<head>
 		<title>스마트 염전관리</title>
 		<meta charset="utf-8" />
